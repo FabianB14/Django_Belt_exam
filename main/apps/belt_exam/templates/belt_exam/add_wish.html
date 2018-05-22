@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href="/wish_list/show_wish_list">Home</a> | <a href="/logOut">Logout</a>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}  
+    <h2>Create a New Wish Item</h2>
+    <form action="/wish_list/add_wish" method="post">
+        {% csrf_token %}
+    <p>Item/Product: <input type="text" name ='item_name' ></p>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

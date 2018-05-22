@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href="/wish_list/show_wish_list">Home</a> | <a href="/logOut">Logout</a>
+        <h1>{{wishes.item_name}}</h1>
+        <h4>Users that added this project</h4>
+        {% for wishers in wishes.wisher.all%}
+        <p>{{wishers.name}}</p>
+        {% endfor%}
+</body>
+</html>
